@@ -1,1 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  /* Gradient background used in earlier version */
+  /* background: linear-gradient(
+    to bottom right,
+    #370e05,
+    #692d16,
+    #9b521c,
+    #c77f1a,
+    #ebb212
+  );
+  background-repeat: no-repeat; */
+
+  background-color: #040c0e;
+  height: 100vh;
+}
+
+.app-title {
+  color: #525b56;
+}

@@ -1,0 +1,40 @@
+.list {
+  font-size: 1.5rem;
+  border: 2px solid #333;
+  background: #132226;
+}
+
+.sub-list {
+  margin-left: 25px;
+  border: 2px solid #a4978e;
+}
+
+.sub-list > .list {
+  border: none;
+}
+
+.sub-title {
+  color: #a4978e;
+}
+
+.title {
+  color: #be9063;
+}
+
+.list-check {
+  font-style: italic;
+  color: #be9063;
+}
+input[type="text"] {
+  padding: 5px;
+  width: 200px;
+  margin: 5px;
+  color: #be9063;
+
+  background: #333;
+}
+
+/* .list {
+  color: black;
+  background: white;
+} */
