@@ -15,25 +15,33 @@ const List = () => {
       updateItems(items.slice(0));
       e.target.value = "";
       toggleItemIsList(false);
+      console.log(items);
     }
   };
 
   // ADD REMOVE ITEM FUNCTIONALITY
-  // const removeItem = e => {
-  //   const items = [this.state.items];
-  //   const index = items.indexOf(e);
+  const removeItem = item => {
+    const index = items.findIndex(listItem => {
+      return item.target.innerHTML === listItem.title;
+    });
 
-  //   if (index > -1) {
-  //     items.splice(index, 1);
-  //   }
-  // };
+    console.log(index);
+
+    let newArray = [];
+    if (index > -1) {
+      items.splice(index, 1);
+      newArray = [...items];
+      updateItems(newArray);
+    }
+    console.log(newArray);
+    return newArray;
+  };
 
   const toggleCheckbox = e => {
     // console.log(e.target.checked);
     toggleItemIsList(e.target.checked);
   };
-  console.log(itemIsList);
-  // console.log(items);
+
   return (
     <div className="list">
       <input
@@ -45,7 +53,7 @@ const List = () => {
       <input type="checkbox" checked={itemIsList} onChange={toggleCheckbox} />
       <span className="list-check"> Is this item another list?</span>
       {items.map(toDo => (
-        <Item data={toDo} />
+        <Item data={toDo} removeItem={removeItem} />
       ))}
     </div>
   );
